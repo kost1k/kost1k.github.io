@@ -1,0 +1,380 @@
+@font-face {
+	font-family: HKGrotesk;
+	src: url(fonts/HKGrotesk-Light.otf);
+}
+
+@font-face {
+	font-family: LeagueSpartan;
+	src: url(fonts/LeagueSpartan-Bold.otf);
+}
+
+.container {
+	width: 1170px;
+	margin: 0 auto;
+}
+
+.container::after {
+	display: table;
+	content: "";
+	clear: both;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #272f45;
+	color: #fff;
+	font-family: HKGrotesk;
+}
+
+.heading,
+.btn {
+	font-family: LeagueSpartan;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.btn {
+	font-size: 18px;
+	width: 120px;
+	height: 48px;
+	background: rgba(255, 255, 255, 0);
+	border: 3px solid #eec9a2;
+	transition: all 0.5s;
+	padding-top: 3px;
+}
+
+.btn:hover {
+	cursor: pointer;
+	background-color: #eec9a2;
+}
+
+
+/*HEADER*/
+
+.logo-img {
+	float: left;
+	margin-top: 63px;
+}
+
+.search-form form {
+	float: right;
+	position: relative;
+	width: 176px;
+	background: #272f45;
+	border-bottom: 3px solid #63757e;
+	margin-top: 85px;
+}
+
+.search-form input,
+.search-form button {
+	border: none;
+	outline: none;
+	background: transparent;
+}
+
+.search-form input {
+	width: 100%;
+	height: 28px;
+	color: #fff;
+	font-size: 18px;
+}
+
+.search-form input::-webkit-input-placeholder {
+	font-family: HKGrotesk;
+	color: #92a1a9;
+	font-size: 24px;
+}
+
+.search-form input::-moz-placeholder {
+	font-family: HKGrotesk;
+	color: #92a1a9;
+	font-size: 24px;
+}
+
+.search-form input::-ms-input-placeholder {
+	font-family: HKGrotesk;
+	color: #92a1a9;
+	font-size: 24px;
+}
+
+.search-form button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+}
+
+.search-form button:before {
+	content: "\f002";
+	font-family: FontAwesome;
+	font-size: 20px;
+	color: #63757e;
+}
+
+
+/*SECTION-1*/
+
+.section-bg {
+	margin-top: 53px;
+	background-image: url(img/Gina.jpg);
+	background-size: cover;
+	box-sizing: border-box;
+	height: 690px;
+	position: relative;
+	padding-top: 110px;
+}
+
+.kick-img {
+	position: absolute;
+	top: 37px;
+	right: 37px;
+}
+
+.content {
+	margin-left: 59px;
+}
+
+.content__heading {
+	font-size: 80px;
+	line-height: normal;
+	margin-bottom: 20px;
+}
+
+.content__text {
+	font-size: 32px;
+}
+
+.content__btn {
+	font-family: HKGrotesk;
+	color: #fff;
+	font-size: 24px;
+	width: 160px;
+	height: 60px;
+	background: rgba(255, 255, 255, 0);
+	border: 3px solid #eec9a2;
+	margin-top: 140px;
+	transition: all 0.5s;
+}
+
+.content__btn:hover {
+	cursor: pointer;
+	background-color: #eec9a2;
+}
+
+
+/*SECTION-2*/
+
+.section-2 {
+	margin-top: 40px;
+}
+
+.block__heading {
+	font-size: 48px;
+}
+
+.block__text {
+	font-size: 24px;
+	margin-top: 10px;
+}
+
+.block__btn {
+	margin-top: 60px;
+}
+
+.block-1 {
+	background-image: url(img/Beoplay.png);
+	background-repeat: no-repeat;
+	background-position: -80px -80px;
+	box-sizing: border-box;
+	float: left;
+	background-color: #60b79f;
+	width: 560px;
+	height: 520px;
+	padding-top: 60px;
+	padding-right: 30px;
+}
+
+.block-1__content {
+	text-align: right;
+}
+
+.block-2 {
+	background-image: url(img/Leica.png);
+	background-repeat: no-repeat;
+	background-position: 140px 240px;
+	box-sizing: border-box;
+	float: right;
+	background-color: #7778c6;
+	width: 560px;
+	height: 520px;
+	padding-top: 60px;
+	padding-left: 30px;
+}
+
+
+/*SECTION-3*/
+
+.section-3 {
+	margin-top: 40px;
+}
+
+.block__heading-2 {
+	font-size: 36px;
+	margin-top: 10px;
+}
+
+.block__text-2 {
+	font-size: 16px;
+}
+
+.block__btn-2 {
+	margin-top: 25px;
+}
+
+.block-3 {
+	background-image: url(img/Molekule.png);
+	background-repeat: no-repeat;
+	background-position: center 250px;
+	box-sizing: border-box;
+	background-color: #e97864;
+	float: left;
+	width: 360px;
+	height: 440px;
+	margin-right: 45px;
+	text-align: center;
+	padding-top: 65px;
+}
+
+.block-4 {
+	background-image: url(img/p9-signature.png);
+	background-repeat: no-repeat;
+	background-position: -325px -160px;
+	box-sizing: border-box;
+	background-color: #557581;
+	float: left;
+	width: 360px;
+	height: 440px;
+	text-align: center;
+	padding-top: 250px;
+}
+
+.block-5 {
+	background-image: url(img/DR-II.png);
+	background-repeat: no-repeat;
+	background-position: center 250px;
+	box-sizing: border-box;
+	background-color: #82c9d8;
+	float: right;
+	width: 360px;
+	height: 440px;
+	text-align: center;
+	padding-top: 65px;
+}
+
+
+/*SECTION-4*/
+
+.section-4 {
+	margin-top: 150px;
+	text-align: center;
+}
+
+.section-4__text-1 {
+	font-size: 36px;
+	color: #93a1a9;
+}
+
+.section-4__text-2 {
+	font-size: 18px;
+	color: #7f919b;
+	margin-top: 20px;
+}
+
+.email__input {
+	text-align: center;
+	color: #fff;
+	width: 354px;
+	height: 60px;
+	border: 3px solid #63757e;
+	background-color: rgba(255, 255, 255, 0);
+	margin-top: 50px;
+	font-size: 20px;
+}
+
+.email__input::-webkit-input-placeholder {
+	font-family: HKGrotesk;
+	color: #92a1a9;
+	font-size: 24px;
+}
+
+.email__input::-moz-placeholder {
+	font-family: HKGrotesk;
+	color: #92a1a9;
+	font-size: 24px;
+}
+
+.email__input::-ms-input-placeholder {
+	font-family: HKGrotesk;
+	color: #92a1a9;
+	font-size: 24px;
+}
+
+.sub__btn {
+	font-family: LeagueSpartan;
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 18px;
+	width: 360px;
+	height: 60px;
+	background: rgba(255, 255, 255, 0);
+	border: 3px solid #82c9d8;
+	transition: all 0.5s;
+	padding-top: 3px;
+	margin-top: 20px;
+}
+
+.sub__btn:hover {
+	cursor: pointer;
+	background-color: #82c9d8;
+}
+
+
+/*FOOTER*/
+
+.footer__nav {
+	text-align: center;
+	margin-top: 100px;
+}
+
+.footer__nav li {
+	display: inline-block;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-right: 1px solid #92a1a9;
+}
+
+.footer__nav li:last-child {
+	border: none;
+}
+
+.footer__nav a {
+	text-decoration: none;
+	color: #92a1a9;
+	font-size: 24px;
+}
+
+.footer__nav a:hover {
+	color: #fff;	
+}
+
+.copyright {
+	text-align: center;
+	color:  #7f919b;
+	font-size: 18px;
+	margin-top: 30px;
+	margin-bottom: 60px;
+}
