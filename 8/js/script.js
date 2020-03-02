@@ -1,16 +1,16 @@
 $(function () {
     $('body').addClass('loaded');
 
-    var $video = $('.video')[0],
+    var $video = $('.video'),
         playBtn = '.video-play-btn',
         $playBtn = $(playBtn);
 
     $(document).on('click', playBtn, function () {
-        $video.play();
+        $video[0].play();
         $playBtn.hide();
     });
 
-    $video.addEventListener('ended', function () {
+    $video.on('ended', function () {
         $playBtn.show();
     });
 
