@@ -49,4 +49,28 @@ $(function () {
             right: ''
         });
     });
+
+    $(document).on('click', '.jury-application-btn', function () {
+        $(this).hide();
+        $('.jury-thx-text').show();
+    });
+
+    $(document).on('click', '.player-card__info-show', function () {
+        $('.ability-popup').show();
+    });
+
+    $(document).on('click', '.ability-popup__close', function () {
+        $('.ability-popup').hide();
+    });
+
+    var $rulesPopup = $('.rules-popup')
+        rulesPopupClose = '.rules-popup__close, .rules__end';
+
+    if ($rulesPopup.length) {
+        $rulesPopup.addClass('showed');
+    }
+
+    $(document).on('click', rulesPopupClose, function () {
+        $rulesPopup.removeClass('showed');
+    });
 });

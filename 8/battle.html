@@ -69,9 +69,11 @@
                 </div>
                 <div class="player-card__name">Константин</div>
                 <div class="player-card__skill">
-                    <img src="./img/battle-skill.png" alt="">
+                    <img src="./img/smak-skill.png" alt="">
                 </div>
-                <div class="player-card__info">Коронное блюдо <span class="player-card__info-highlight">Суп с пельменями</span></div>
+                <div class="player-card__info">
+                    <span class="player-card__info-show">Посмотреть способности</span>
+                </div>
                 <div class="player-card__btn player-card__btn_purple">Нанять</div>
             </div>
 
@@ -82,9 +84,11 @@
                 </div>
                 <div class="player-card__name">Константин</div>
                 <div class="player-card__skill">
-                    <img src="./img/battle-skill.png" alt="">
+                    <img src="./img/smak-skill.png" alt="">
                 </div>
-                <div class="player-card__info">Коронное блюдо <span class="player-card__info-highlight">Суп с пельменями</span></div>
+                <div class="player-card__info">
+                    <span class="player-card__info-show">Посмотреть способности</span>
+                </div>
                 <div class="player-card__btn player-card__btn_purple">Нанять</div>
             </div>
 
@@ -95,9 +99,11 @@
                 </div>
                 <div class="player-card__name">Константин</div>
                 <div class="player-card__skill">
-                    <img src="./img/battle-skill.png" alt="">
+                    <img src="./img/smak-skill.png" alt="">
                 </div>
-                <div class="player-card__info">Коронное блюдо <span class="player-card__info-highlight">Суп с пельменями</span></div>
+                <div class="player-card__info">
+                    <span class="player-card__info-show">Посмотреть способности</span>
+                </div>
                 <div class="player-card__btn player-card__btn_purple">Нанять</div>
             </div>
 
@@ -108,36 +114,91 @@
                 </div>
                 <div class="player-card__name">Константин</div>
                 <div class="player-card__skill">
-                    <img src="./img/battle-skill.png" alt="">
+                    <img src="./img/smak-skill.png" alt="">
                 </div>
-                <div class="player-card__info">Коронное блюдо <span class="player-card__info-highlight">Суп с пельменями</span></div>
+                <div class="player-card__info">
+                    <span class="player-card__info-show">Посмотреть способности</span>
+                </div>
                 <div class="player-card__btn player-card__btn_purple">Нанять</div>
             </div>
+        </div>
+    </div>
 
-            <div class="player-card">
-                <div class="player-card__img">
-                    <img src="./img/player-demo.jpg" alt="player-card__img_default">
-                    <img src="./img/player-demo_hover.jpg" alt="" class="player-card__img_hover">
-                </div>
-                <div class="player-card__name">Константин</div>
-                <div class="player-card__skill">
-                    <img src="./img/battle-skill.png" alt="">
-                </div>
-                <div class="player-card__info">Коронное блюдо <span class="player-card__info-highlight">Суп с пельменями</span></div>
-                <div class="player-card__btn player-card__btn_purple">Нанять</div>
+    <div class="ability-popup" style="display: none;">
+        <div class="ability-popup__content">
+            <div class="ability-popup__close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" fill="none" viewBox="0 0 21 20">
+                    <path stroke="#000" stroke-width="3" d="M1.15 19.293l18-18M1.707 1.293l18 18"/>
+                </svg>
             </div>
 
-            <div class="player-card">
-                <div class="player-card__img">
-                    <img src="./img/player-demo.jpg" alt="player-card__img_default">
-                    <img src="./img/player-demo_hover.jpg" alt="" class="player-card__img_hover">
+            <div class="ability">
+                <div class="ability__title">Способности персонажа</div>
+
+                <div class="ability__wrapper">
+                    <div class="ability__row ability__row_title">
+                        <div class="ability__col">1 скил</div>
+                        <div class="ability__col">2 скил</div>
+                        <div class="ability__col">Ульт</div>
+                    </div>
+
+                    <div class="ability__row">
+                        <div class="ability__col">Описание 1 скила</div>
+                        <div class="ability__col">Описание 2 скила</div>
+                        <div class="ability__col">Описание ульты</div>
+                    </div>
+
+                    <div class="ability__row ability__row_title">
+                        <div class="ability__col ability__col_long">Фаталити</div>
+                    </div>
+
+                    <div class="ability__row">
+                        <div class="ability__col ability__col_long">Описание Фаталити</div>
+                    </div>
                 </div>
-                <div class="player-card__name">Константин</div>
-                <div class="player-card__skill">
-                    <img src="./img/battle-skill.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="rules-popup rules-popup_purple">
+        <div class="rules-popup__close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="none" viewBox="0 0 42 42">
+                <path stroke="#fff" stroke-width="6" d="M3 3l18 18m18 18L21 21m0 0L39 3 3 39"/>
+            </svg>
+        </div>
+
+        <div class="rules-popup__content">
+            <div class="rules">
+                <div class="rules__title">Правила</div>
+
+                <div class="rules__text">
+                    Привет, Игрок!
+                    <br><br>
+                    Добро пожаловать в первую в своём роде, мобильную игру Battlebots!<br>
+                    Здесь тебе предстоит сразиться с другими игроками, развивая своего персонажа, пробивая путь к вершине славы (не Князькова, просто "славы", слово такое).
+                    <br><br>
+                    Для того чтобы принять участие - тебе нужно добавить в телеграме @vladimiregipko и выбрать понравившегося персонажа. Будь внимательна и решительна, отменить выбор нельзя, но и мешкать не стоит. Хорошие бойцы на дороге не валяются!
+                    <br><br>
+                    Правила боя просты (нет).
+                    <br><br>
+                    У бойцов есть 3 очка здоровья и 3 зоны:<br>
+                    Голова<br>
+                    Тело<br>
+                    И низ
+                    <br><br>
+                    Бои происходят пошагово.<br>
+                    Бойцы выходят на арену и ждут указаний.<br>
+                    В начале хода Игрок отдаёт команду бойцу в специально созданном чате, какую зону противника атаковать и какую из своих защищать. После команды ведущего, происходит анимация указанного действия.
+                    <br><br>
+                    При попадании в незащищенную часть тела, у противника снимается 1 очко здоровья. При попрадании в блок - урон не проходит.
+                    <br><br>
+                    У каждого бойца есть свои уникальные навыки, каждый из которых можно применить 1 раз за бой.<br>
+                    С каждой победой, боец будет получать +1 очко здоровья и открывать новый навык.
+                    <br><br>
+                    Удачи Игрок! И пусть победит сильнейшая!
                 </div>
-                <div class="player-card__info">Коронное блюдо <span class="player-card__info-highlight">Суп с пельменями</span></div>
-                <div class="player-card__btn player-card__btn_purple">Нанять</div>
+
+                <div class="rules__end">Перейти к выбору персонажей</div>
             </div>
         </div>
     </div>
