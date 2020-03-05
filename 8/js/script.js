@@ -1,18 +1,26 @@
 $(function () {
+    var PageScroll = {
+        init: function () {
+            this._currentPosition = 0;
+            this._$scrollable = $(document.scrollingElement || document.documentElement);
+            this._disabledScrollCn = 'scroll-disabled';
+        },
+        disable: function () {
+            this._currentPosition = window.pageYOffset || document.documentElement.scrollTop;
+            this._$scrollable.addClass(this._disabledScrollCn);
+            this._$scrollable.css('margin-top', -this._currentPosition);
+        },
+        enable: function () {
+            this._$scrollable
+                .removeClass(this._disabledScrollCn)
+                .css('margin-top', '')
+                .scrollTop(this._currentPosition);
+        }
+    };
+
+    PageScroll.init();
+
     $('body').addClass('loaded');
-
-    var $video = $('.video'),
-        playBtn = '.video-play-btn',
-        $playBtn = $(playBtn);
-
-    $(document).on('click', playBtn, function () {
-        $video[0].play();
-        $playBtn.hide();
-    });
-
-    $video.on('ended', function () {
-        $playBtn.show();
-    });
 
     var $faq = $('.faq'),
         faqShow = '.faq-show',
@@ -31,7 +39,7 @@ $(function () {
             faqTitleTop = faqListOffsetTop - faqTitleHeight - 65,
             faqTitleRight = screenWidth - (faqListOffsetLeft - screenWidth) - (faqItemNumWidth + 20) - 100;
 
-        console.log(faqListOffsetTop)
+        PageScroll.disable();
 
         $(this).addClass('opened');
         $faq.addClass('opened');
@@ -42,6 +50,8 @@ $(function () {
     });
 
     $(document).on('click', faqClose, function () {
+        PageScroll.enable();
+
         $faq.removeClass('opened');
         $(faqShow).removeClass('opened');
         $faqTitle.css({
@@ -64,13 +74,18 @@ $(function () {
     });
 
     var $rulesPopup = $('.rules-popup')
-        rulesPopupClose = '.rules-popup__close, .rules__end';
+        rulesPopupClose = '.rules-popup__close, .rules__end',
+        rulesRead = localStorage.getItem('rulesRead');
 
-    if ($rulesPopup.length) {
+    if ($rulesPopup.length && !rulesRead) {
+        PageScroll.disable();
         $rulesPopup.addClass('showed');
     }
 
     $(document).on('click', rulesPopupClose, function () {
+        localStorage.setItem('rulesRead', true);
+
+        PageScroll.enable();
         $rulesPopup.removeClass('showed');
     });
 });
