@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Polo</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+    <div class="custom-polo">
+        <svg viewBox="0 0 1000 800" height="100vh" class="custom-img">
+            <defs>
+                <filter id="bodyColor">
+                    <feFlood result="floodFill" x="0" y="0" width="100%" height="100%" :flood-color="bodyColor" flood-opacity="1"/>
+                    <feComposite in="SourceGraphic" in2="floodFill" operator="arithmetic" k1="1" k2="0" k3="0" k4="0" />
+                </filter>
+
+                <filter id="neckColor">
+                    <feFlood result="floodFill" x="0" y="0" width="100%" height="100%" :flood-color="neckColor" flood-opacity="1"/>
+                    <feComposite in="SourceGraphic" in2="floodFill" operator="arithmetic" k1="1" k2="0" k3="0" k4="0" />
+                </filter>
+
+                <filter id="cuffColor">
+                    <feFlood result="floodFill" x="0" y="0" width="100%" height="100%" :flood-color="cuffColor" flood-opacity="1"/>
+                    <feComposite in="SourceGraphic" in2="floodFill" operator="arithmetic" k1="1" k2="0" k3="0" k4="0" />
+                </filter>
+            </defs>
+
+            <image xlink:href="img/base.png"></image>
+            <image xlink:href="img/cuff.png" x="437" y="420" filter="url(#cuffColor)"></image>
+            <image xlink:href="img/neck.png" x="584" y="191" filter="url(#neckColor)"></image>
+            <image xlink:href="img/body.png" x="438" y="223" filter="url(#bodyColor)"></image>
+        </svg>
+
+        <div class="color-controller">
+            <div class="color-controller__row">
+                <div class="color-controller__title">Основной цвет</div>
+
+                <div class="color-controller__list">
+                    <label v-for="color in colors" class="color-controller-item">
+                        <input type="radio" name="body-color" :value="color" class="color-controller-item__radio" v-model="bodyColor">
+
+                        <div :style="{backgroundColor: color}" class="color-controller-item__label"></div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="color-controller__row">
+                <div class="color-controller__title">Цвет воротника</div>
+
+                <div class="color-controller__list">
+                    <label v-for="color in colors" class="color-controller-item">
+                        <input type="radio" name="neck-color" :value="color" class="color-controller-item__radio" v-model="neckColor">
+
+                        <div :style="{backgroundColor: color}" class="color-controller-item__label"></div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="color-controller__row">
+                <div class="color-controller__title">Цвет манжета</div>
+
+                <div class="color-controller__list">
+                    <label v-for="color in colors" class="color-controller-item">
+                        <input type="radio" name="cuff-color" :value="color" class="color-controller-item__radio" v-model="cuffColor">
+
+                        <div :style="{backgroundColor: color}" class="color-controller-item__label"></div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
