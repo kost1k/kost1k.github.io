@@ -34,45 +34,106 @@
             <image xlink:href="img/cuff.png" x="437" y="420" filter="url(#cuffColor)"></image>
             <image xlink:href="img/neck.png" x="584" y="191" filter="url(#neckColor)"></image>
             <image xlink:href="img/body.png" x="438" y="223" filter="url(#bodyColor)"></image>
+            <image :xlink:href="'img/logo/logo-' + logo + '.png'" x="724" y="351"></image>
+            <image xlink:href="img/logo/85870.png" x="718" y="316" width="31.6" height="22.04" style="transform: rotate(9.1deg); transform-origin: center;"></image>
         </svg>
 
-        <div class="color-controller">
-            <div class="color-controller__row">
-                <div class="color-controller__title">Основной цвет</div>
-
-                <div class="color-controller__list">
-                    <label v-for="color in colors" class="color-controller-item">
-                        <input type="radio" name="body-color" :value="color" class="color-controller-item__radio" v-model="bodyColor">
-
-                        <div :style="{backgroundColor: color}" class="color-controller-item__label"></div>
-                    </label>
+        <div class="custom-step-wrapper">
+            <div class="custom-step">
+                <div class="custom-step__header">
+                    <div class="custom-step__title">
+                        <span v-html="step"></span> / <span v-html="numberOfSteps"></span> · <span v-html="stepName"></span>
+                    </div>
+                    <div class="custom-step__select" v-html="stepSelect"></div>
                 </div>
-            </div>
 
-            <div class="color-controller__row">
-                <div class="color-controller__title">Цвет воротника</div>
+                <div class="custom-step__content" v-show="stepType === 'size'">
+                    <div class="custom-step__content-inner">
+                        <div class="custom-size">
+                            <label v-for="(size, index) in sizes" :key="index" class="custom-size-item">
+                                <input type="radio" name="size" :value="size" class="custom-radio custom-size-item__radio" v-model="stepValue">
 
-                <div class="color-controller__list">
-                    <label v-for="color in colors" class="color-controller-item">
-                        <input type="radio" name="neck-color" :value="color" class="color-controller-item__radio" v-model="neckColor">
-
-                        <div :style="{backgroundColor: color}" class="color-controller-item__label"></div>
-                    </label>
+                                <div class="custom-size-item__label" v-html="size"></div>
+                            </label>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="color-controller__row">
-                <div class="color-controller__title">Цвет манжета</div>
+                <div class="custom-step__content" v-show="stepType === 'color'">
+                    <div class="custom-step__content-inner">
+                        <div class="custom-color">
+                            <label v-for="(color, index) in arrColors" :key="index" class="custom-color-item">
+                                <input type="radio" name="body-color" :value="color.value" class="custom-radio custom-color-item__radio" v-model="stepValue">
 
-                <div class="color-controller__list">
-                    <label v-for="color in colors" class="color-controller-item">
-                        <input type="radio" name="cuff-color" :value="color" class="color-controller-item__radio" v-model="cuffColor">
+                                <div :style="{backgroundColor: color.color}" class="custom-color-item__label"></div>
 
-                        <div :style="{backgroundColor: color}" class="color-controller-item__label"></div>
-                    </label>
+                                <div class="custom-color-item__name" v-html="color.name"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="custom-step__content" v-show="stepType === 'logo'">
+                    <div class="custom-step__content-inner custom-step__content-inner--logo">
+                        <div class="custom-logo">
+                            <label v-for="(logo, index) in logos" :key="index" class="custom-logo-item">
+                                <input type="radio" name="logo" :value="logo" class="custom-radio custom-logo-item__radio" v-model="stepValue">
+
+                                <div class="custom-logo-item__label">
+                                    <img :src="'img/logo/logo-' + logo + '.png'" alt="">
+                                </div>
+
+                                <div class="custom-logo-item__name" v-html="logo"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="custom-step__contols">
+                    <button class="custom-step-button custom-step-button--prev" @click="prevStep">Назад</button>
+                    <button class="custom-step-button custom-step-button--next" @click="nextStep">Дальше</button>
                 </div>
             </div>
         </div>
+
+
+        <!--<div class="color-controller">-->
+            <!--<div class="color-controller__row">-->
+                <!--<div class="color-controller__title">Основной цвет</div>-->
+
+                <!--<div class="color-controller__list">-->
+                    <!--<label v-for="color in colors" class="color-controller-item">-->
+                        <!--<input type="radio" name="body-color" :value="color" class="color-controller-item__radio" v-model="bodyColor">-->
+
+                        <!--<div :style="{backgroundColor: color}" class="color-controller-item__label"></div>-->
+                    <!--</label>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="color-controller__row">-->
+                <!--<div class="color-controller__title">Цвет воротника</div>-->
+
+                <!--<div class="color-controller__list">-->
+                    <!--<label v-for="color in colors" class="color-controller-item">-->
+                        <!--<input type="radio" name="neck-color" :value="color" class="color-controller-item__radio" v-model="neckColor">-->
+
+                        <!--<div :style="{backgroundColor: color}" class="color-controller-item__label"></div>-->
+                    <!--</label>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="color-controller__row">-->
+                <!--<div class="color-controller__title">Цвет манжета</div>-->
+
+                <!--<div class="color-controller__list">-->
+                    <!--<label v-for="color in colors" class="color-controller-item">-->
+                        <!--<input type="radio" name="cuff-color" :value="color" class="color-controller-item__radio" v-model="cuffColor">-->
+
+                        <!--<div :style="{backgroundColor: color}" class="color-controller-item__label"></div>-->
+                    <!--</label>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
     </div>
 
 </div>

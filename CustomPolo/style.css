@@ -9,7 +9,6 @@ body {
 
 .custom-polo {
     display: flex;
-    align-items: center;
 }
 
 .color-controller__row {
@@ -56,4 +55,227 @@ body {
 
 .color-controller-item__radio:checked + .color-controller-item__label {
     border-color: #000000;
+}
+
+.custom-step-wrapper {
+    flex: 1 1 auto;
+    background-color: #f4f4f4;
+}
+
+.custom-step {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.custom-step__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 145px;
+}
+
+.custom-step__title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.custom-step__select {
+    color: #606060;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.custom-step__content {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.custom-step__content-inner {
+    max-width: 360px;
+    width: 100%;
+}
+
+.custom-step__content-inner--logo {
+    max-width: 450px;
+}
+
+.custom-step__contols {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 105px;
+    border: 4px solid #f4f4f4;
+    background-color: #fff;
+}
+
+.custom-step-button {
+    height: 44px;
+    padding: 0 30px;
+    border: 1px solid #e5e5e5;
+    border-radius: 27px;
+    background-color: #fff;
+    color: #292929;
+    font-size: 15px;
+    line-height: 25px;
+    cursor: pointer;
+    outline: none;
+    transition: all .3s ease-in-out;
+}
+
+.custom-step-button--prev:hover {
+    background-color: #292929;
+    border-color: #545454;
+    color: #fff;
+}
+
+.custom-step-button--next {
+    background-color: #105a33;
+    border: none;
+    color: #fff;
+}
+
+.custom-step-button--next:hover {
+    background-color: #187c48;
+}
+
+.custom-step-button + .custom-step-button {
+    margin-left: 10px;
+}
+
+.custom-radio {
+    display: none;
+}
+
+.custom-size {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.custom-size-item {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin: 15px 0;
+}
+
+.custom-size-item__label {
+    width: 90px;
+    padding: 9px 0;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 17px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.custom-size-item__radio:checked + .custom-size-item__label {
+    background-color: #fff;
+}
+
+.custom-color {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.custom-color-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 33.33%;
+    margin: 15px 0;
+}
+
+.custom-color-item__label {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    box-sizing: border-box;
+    border: 3px solid #fff;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.custom-color-item__label:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 3px solid #f4f4f4;
+    border-radius: 100%;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.custom-color-item__radio:checked + .custom-color-item__label:before {
+    opacity: 1;
+}
+
+.custom-color-item__name {
+    margin-top: 5px;
+    color: #606060;
+    font-size: 15px;
+    line-height: 17px;
+}
+
+.custom-logo {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.custom-logo-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 33.33%;
+    margin: 15px 0;
+}
+
+.custom-logo-item__label {
+    position: relative;
+    width: 110px;
+    height: 60px;
+    box-sizing: border-box;
+    border: 3px solid #fff;
+    border-radius: 30px;
+    transition: background .3s ease;
+    cursor: pointer;
+}
+
+.custom-logo-item__label:hover {
+    background-color: #fff;
+}
+
+.custom-logo-item__radio:checked + .custom-logo-item__label {
+    background-color: #fff;
+}
+
+.custom-logo-item__label img {
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.custom-logo-item__name {
+    margin-top: 5px;
+    color: #606060;
+    font-size: 15px;
+    line-height: 17px;
 }
